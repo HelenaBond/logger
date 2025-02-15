@@ -1,4 +1,6 @@
-package org.example;
+package org.example.appender;
+
+import org.example.LogLevel;
 
 import java.time.format.DateTimeFormatter;
 

@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.appender.Appender;
+
 import java.util.ArrayList;
 import java.util.List;
 

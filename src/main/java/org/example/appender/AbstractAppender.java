@@ -1,21 +1,16 @@
-package org.example;
+package org.example.appender;
+
+import org.example.LogLevel;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public abstract class AbstractAppender implements Appender {
 
-    private DateTimeFormatter dateTimeFormat;
-    private String messageFormat;
-    private LogLevel from;
-    private LogLevel to;
-
-    public AbstractAppender() {
-        dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        messageFormat = "[%s] [%s] %s";
-        from = LogLevel.INFO;
-        to = LogLevel.ERROR;
-    }
+    private DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private String messageFormat = "[%s] [%s] %s";
+    private LogLevel from = LogLevel.INFO;
+    private LogLevel to = LogLevel.ERROR;
 
     @Override
     public DateTimeFormatter getDateTimeFormat() {
