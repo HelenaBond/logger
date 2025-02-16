@@ -8,17 +8,15 @@ import java.io.IOException;
 
 public class JsonLoggerConfigurator extends AbstractConfigurator {
 
-    private final String pathToSettings;
-
     public JsonLoggerConfigurator(String pathToSettings) {
-        this.pathToSettings = pathToSettings;
+        super(pathToSettings);
     }
 
     @Override
     public Logger configureLogger() {
         Logger logger = new Logger();
         ObjectMapper objectMapper = new ObjectMapper();
-        File json = new File(pathToSettings);
+        File json = new File(getPathToSettings());
         try {
             logger = objectMapper.readValue(json, Logger.class);
         } catch (IOException e) {
