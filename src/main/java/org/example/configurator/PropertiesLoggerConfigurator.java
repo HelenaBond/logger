@@ -2,6 +2,7 @@ package org.example.configurator;
 
 import org.example.Logger;
 import org.example.appender.Appender;
+import org.example.appender.AppenderRegister;
 import org.example.propsParser.DeserializerRegister;
 import org.example.propsParser.deserializer.PropertiesDeserializer;
 import org.example.propsParser.deserializer.PropsDeserializer;
@@ -22,6 +23,10 @@ public class PropertiesLoggerConfigurator extends AbstractConfigurator {
 
     public PropertiesLoggerConfigurator(String pathToSettings) {
         super(pathToSettings);
+    }
+
+    public PropertiesLoggerConfigurator(AppenderRegister appenderRegister, String pathToSettings) {
+        super(appenderRegister, pathToSettings);
     }
 
     @Override
