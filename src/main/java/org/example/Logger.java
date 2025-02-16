@@ -1,6 +1,8 @@
 package org.example;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.example.appender.Appender;
+import org.example.jsonParser.AppenderListJsonDeserializer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,7 @@ public class Logger {
         appenders = new ArrayList<>();
     }
 
+    @JsonDeserialize(using = AppenderListJsonDeserializer.class)
     public List<Appender> getAppenders() {
         return appenders;
     }
